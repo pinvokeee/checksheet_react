@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { CheckItemList } from './components/checksheet/items';
+import { sheetConfig } from './interface/interface';
 
-function App() {
+const App = () => 
+{
+  //@ts-ignore
+  const s : sheetConfig = sheet_data as sheetConfig;
+
+  console.log(s);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <CheckItemList sheet={s.presets[0]}></CheckItemList>
+
     </div>
   );
 }
